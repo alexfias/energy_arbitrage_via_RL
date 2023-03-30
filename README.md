@@ -1,6 +1,6 @@
 # Energy Arbitrage Reinforcement Learning
 
-This repository contains a simple reinforcement learning model for energy arbitrage in a storage system. The model is trained using Deep Q-Networks (DQN) to learn when to buy, sell or hold energy based on given energy price data.
+This repository contains a simple reinforcement learning model for energy arbitrage in a storage system. The model is trained using Deep Q-Networks (DQN) to learn when to buy, sell or hold energy based on given energy price data. The model was developed in the context of the EnergiesysAI project financed by the German Federal Ministry for Economics and Climate Action.
 
 ## Files
 
