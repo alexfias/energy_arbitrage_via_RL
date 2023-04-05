@@ -1,39 +1,44 @@
 # Energy Arbitrage Reinforcement Learning
 
-This repository contains a simple reinforcement learning model for energy arbitrage in a storage system. The model is trained using Deep Q-Networks (DQN) to learn when to buy, sell or hold energy based on given energy price data. The model was developed in the context of the EnergiesysAI project financed by the German Federal Ministry for Economics and Climate Action.
+This repository contains a reinforcement learning (RL) model to optimize energy arbitrage in a storage system. The model is built using the TensorFlow Agents library and is designed to help an agent make decisions on when to buy, sell, or hold energy based on the energy prices.
 
-## Files
+## Environment
 
-- `environment.py`: Contains the custom `EnergyArbitrageEnv` class, which extends OpenAI Gym's environment class. This file defines the energy market environment and its dynamics.
+The environment simulates an energy market with a storage system. The agent interacts with the environment by choosing actions from a discrete action space:
 
-- `main.py`: The main script that trains and tests the DQN agent using the `EnergyArbitrageEnv` environment.
+0. Buy energy
+1. Sell energy
+2. Hold (do nothing)
 
-## Dependencies
+The agent receives a reward based on the difference between the energy prices when buying and selling, as well as the storage level and efficiency.
 
-To run the code, you will need the following libraries:
+## Model
 
-- `gym`
-- `numpy`
-- `keras`
-- `keras-rl2`
+The RL agent used in this model is a DQN (Deep Q-Network) agent, which employs a neural network to approximate the Q-function. The Q-function represents the expected cumulative reward the agent can obtain by taking a specific action in a given state and following the optimal policy thereafter. The DQN agent learns from experience by interacting with the environment and optimizing the neural network to minimize the difference between the predicted and actual Q-values.
 
-You can install these dependencies using pip:
+## Getting Started
 
-pip install gym numpy keras keras-rl2
+### Prerequisites
 
+- Python 3.7+
+- TensorFlow 2.5+
+- TensorFlow Agents
 
-## Usage
+### Running the Model
 
 1. Clone the repository:
 
 
 git clone https://github.com/your_username/energy-arbitrage-rl.git
-cd energy-arbitrage-rl
+
+2. Install the required packages:
 
 
-2. Update the `energy_prices` variable in `main.py` with your own energy price data.
+pip install tensorflow tensorflow-agents
 
-3. Run the main script to train and test the model:
+3. Update the `energy_prices` variable in `main.py` with your own energy price data.
+
+4. Run the `main.py` file to train the RL agent:
 
 python main.py
 
